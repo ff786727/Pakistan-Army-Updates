@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pakistan Army Updates | Letters</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --bg2:#111823;
+      --card:#151c28;
+      --card2:#0f1620;
+      --text:#e8eef7;
+      --muted:#a9b4c4;
+      --green:#18c66e;
+      --green2:#0f9e57;
+      --border:rgba(255,255,255,.08);
+      --shadow:0 12px 35px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:linear-gradient(180deg, #071018 0%, #0b0f14 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .topbar{
+      background:linear-gradient(90deg, #0d7a3d, #0a5f31);
+      padding:22px 16px;
+      text-align:center;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .topbar h1{
+      font-size:clamp(24px, 4vw, 38px);
+      font-weight:800;
+      letter-spacing:.3px;
+      margin-bottom:6px;
+    }
+
+    .topbar p{
+      color:#d7efe2;
+      font-size:15px;
+    }
+
+    .container{
+      width:min(1200px, 92%);
+      margin:0 auto;
+      padding:24px 0 40px;
+    }
+
+    .hero{
+      background:linear-gradient(180deg, rgba(24,198,110,.11), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      margin-top:18px;
+    }
+
+    .hero h2{
+      font-size:clamp(22px, 3vw, 34px);
+      margin-bottom:10px;
+    }
+
+    .hero p{
+      color:var(--muted);
+      max-width:900px;
+    }
+
+    .notice{
+      margin-top:16px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(24,198,110,.12);
+      border:1px solid rgba(24,198,110,.25);
+      color:#dfffee;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .search-wrap{
+      margin:22px 0 18px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .search-wrap input{
+      flex:1;
+      min-width:240px;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      outline:none;
+      background:var(--bg2);
+      color:var(--text);
+      font-size:15px;
+    }
+
+    .search-wrap input::placeholder{
+      color:#7f8b9c;
+    }
+
+    .search-wrap .btn{
+      padding:14px 18px;
+      border:none;
+      border-radius:14px;
+      background:linear-gradient(180deg, var(--green), var(--green2));
+      color:white;
+      font-weight:800;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(24,198,110,.22);
+    }
+
+    .section{
+      margin-top:24px;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+      flex-wrap:wrap;
+    }
+
+    .section-title h3{
+      font-size:24px;
+      font-weight:800;
+    }
+
+    .section-title span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12, 1fr);
+      gap:16px;
+    }
+
+    .card{
+      grid-column:span 6;
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      transition:.25s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-3px);
+      border-color:rgba(24,198,110,.28);
+    }
+
+    .card.full{
+      grid-column:span 12;
+    }
+
+    .card h4{
+      font-size:20px;
+      margin-bottom:10px;
+      color:#f4fbff;
+    }
+
+    .meta{
+      display:grid;
+      gap:10px;
+      margin-top:12px;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .meta div{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.05);
+      border-radius:12px;
+      padding:12px 14px;
+    }
+
+    .label{
+      color:#9fd8b9;
+      font-weight:700;
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      margin-top:10px;
+      font-weight:800;
+      font-size:13px;
+      background:rgba(24,198,110,.12);
+      border:1px solid rgba(24,198,110,.22);
+      color:#dfffee;
+    }
+
+    .status.pending{
+      background:rgba(255,193,7,.12);
+      border-color:rgba(255,193,7,.24);
+      color:#fff0bf;
+    }
+
+    .whatsapp-box{
+      background:linear-gradient(180deg, rgba(24,198,110,.12), rgba(255,255,255,.02));
+      border:1px solid rgba(24,198,110,.22);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      margin-top:18px;
+    }
+
+    .whatsapp-box h3{
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .whatsapp-row{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .wa-btn{
+      display:inline-block;
+      text-decoration:none;
+      background:linear-gradient(180deg, var(--green), var(--green2));
+      color:white;
+      font-weight:800;
+      padding:12px 18px;
+      border-radius:14px;
+    }
+
+    .footer{
+      text-align:center;
+      padding:26px 16px 34px;
+      color:#93a0b1;
+      font-size:14px;
+    }
+
+    .small{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:8px;
+    }
+
+    @media (max-width: 820px){
+      .card{ grid-column:span 12; }
+      .hero{ padding:20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <h1>Pakistan Army Updates</h1>
+    <p>Letters Information | AS&RO Centres | Recruitment Updates</p>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Letters Status & AS&RO Centres</h2>
+      <p>
+        Is page mein aap ke diye gaye AS&RO centres, telephone numbers, addresses aur 25B / 26A letters ka status Urdu mein display kiya gaya hai.
+      </p>
+      <div class="notice">✅ 25B aur 26A letters update section active hai</div>
+    </section>
+
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Center ka naam search karein..." onkeyup="filterCards()" />
+      <button class="btn" onclick="filterCards()">Search</button>
+    </div>
+
+    <section class="section">
+      <div class="section-title">
+        <h3>AS&RO Recruitment Centres</h3>
+        <span>Initial Selection Stages: Registration, Intelligence Test, Academic Test, Medical Test, Interview</span>
+      </div>
+
+      <div class="grid" id="cardsGrid">
+
+        <article class="card">
+          <h4>Sibi</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Office Sibi</div>
+            <div><span class="label">Telephone No:</span> 0833-9209-35885</div>
+            <div><span class="label">Address:</span> Sibi Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Azad Kashmir</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Office A.K.</div>
+            <div><span class="label">Telephone No:</span> 051-561-34184</div>
+            <div><span class="label">Address:</span> Roomi Road Opposite Transit Camp, Rawalpindi Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Bahawalpur</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Office Bahawalpur</div>
+            <div><span class="label">Telephone No:</span> 062-891-35885</div>
+            <div><span class="label">Address:</span> Yazman Road, Kali Pulli, Bahawalpur</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>D. I. Khan</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Office D.I. Khan</div>
+            <div><span class="label">Telephone No:</span> 0922-20135885</div>
+            <div><span class="label">Address:</span> Sadiq Road Near Station Headquarter, Dera Ismail Khan Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Faisalabad</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Office Faisalabad</div>
+            <div><span class="label">Telephone No:</span> 041-9200363 (Civ)</div>
+            <div><span class="label">Address:</span> Near District Headquarter Hospital, Faisalabad</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Gilgit</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Center Gilgit</div>
+            <div><span class="label">Telephone No:</span> 05811-961-35887</div>
+            <div><span class="label">Address:</span> Opposite Jutial Public School &amp; College, Jutial, Gilgit</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Hyderabad</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Center Hyderabad</div>
+            <div><span class="label">Telephone No:</span> 022-791-35885</div>
+            <div><span class="label">Address:</span> Near Gul Center, Hyderabad Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Jehlam</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Office Jehlum</div>
+            <div><span class="label">Telephone No:</span> 0544-69-35885</div>
+            <div><span class="label">Address:</span> Kazim Shaheed Road opposite Union Bank, Jehlum</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Karachi</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Center Karachi</div>
+            <div><span class="label">Telephone No:</span> 021-560-35885</div>
+            <div><span class="label">Address:</span> Main Shahra-e-Faisal Near Station Headquarter, Karachi Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Kohat</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Center Kohat</div>
+            <div><span class="label">Telephone No:</span> 0922-521-35885</div>
+            <div><span class="label">Address:</span> Near CMH Peshawar Road, Kohat Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Khuzdar</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Office Khuzdar</div>
+            <div><span class="label">Telephone No:</span> 08482-8612-35885</div>
+            <div><span class="label">Address:</span> Near General Bus Stand Karachi Road, Khuzdar Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Lahore</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Center Lahore</div>
+            <div><span class="label">Telephone No:</span> 042-6699-358857</div>
+            <div><span class="label">Address:</span> Shami Road Near Fortress Stadium, Lahore Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Larkana</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Office Larkana</div>
+            <div><span class="label">Telephone No:</span> 074-9410121 (Civ)</div>
+            <div><span class="label">Address:</span> Government Degree College Larkana</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Loralai</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Office Loralai</div>
+            <div><span class="label">Telephone No:</span> 081-2490-33621</div>
+            <div><span class="label">Address:</span> Loralai Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Multan</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Center Multan</div>
+            <div><span class="label">Telephone No:</span> 061-531-35885</div>
+            <div><span class="label">Address:</span> Tipu Sultan Road, Multan Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Turbat</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Office Turbat</div>
+            <div><span class="label">Telephone No:</span> 0852-413185</div>
+            <div><span class="label">Address:</span> Turbat City</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Peshawar</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Center Peshawar</div>
+            <div><span class="label">Telephone No:</span> 091-201-35885</div>
+            <div><span class="label">Address:</span> Sahabzada Gul Road Opposite PAF Cinema, Peshawar Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Rawalpindi</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Center Rawalpindi</div>
+            <div><span class="label">Telephone No:</span> 051-561-34137</div>
+            <div><span class="label">Address:</span> Roomi Road Opposite Transit Camp, Rawalpindi Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Quetta</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Center Quetta</div>
+            <div><span class="label">Telephone No:</span> 081-9209-35885</div>
+            <div><span class="label">Address:</span> Zarghoon Road Opposite Serena Hotel, Quetta Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Sargodha</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Office Sargodha</div>
+            <div><span class="label">Telephone No:</span> 048-730-35885</div>
+            <div><span class="label">Address:</span> Katchury Road Near District Jail, Sargodha Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h4>Sialkot</h4>
+          <div class="meta">
+            <div><span class="label">Office:</span> Army Selection and Recruitment Office Sialkot</div>
+            <div><span class="label">Telephone No:</span> 052-571-35885</div>
+            <div><span class="label">Address:</span> Mudassar Shaheed Road Near Garrison Park, Sialkot Cantonment</div>
+            <div class="status">25B / 26A letters start ho chuke hain</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="whatsapp-box">
+      <h3>WhatsApp Contact</h3>
+      <p>Aap ke website ke liye WhatsApp number yeh rahega:</p>
+      <div class="whatsapp-row">
+        <a class="wa-btn" href="https://wa.me/923089591035" target="_blank" rel="noopener noreferrer">
+          WhatsApp: 0308 9591035
+        </a>
+        <div class="small">Aap is number ko footer aur contact section dono mein use kar sakte hain.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    © 2026 Pakistan Army Updates | Letters Information Page
+  </footer>
+
+  <script>
+    function filterCards() {
+      const input = document.getElementById('searchInput').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('#cardsGrid .card');
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(input) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+  </html>
